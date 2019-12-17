@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TimerEditActivity"></activity>
+        <activity android:name=".TimerDetailActivity"></activity>
     </application>
 
 </manifest>
