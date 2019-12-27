@@ -2,12 +2,15 @@ package com.example.jszx.mytime;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -34,6 +37,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private Context context;//colorPicker
+    private Toolbar toolbar_top;//colorPicker
+    private FloatingActionButton floatingActionButton;
+    private ColorPickerDialog dialog;//colorPicker
     private List<Timer> theTimers;//list
     private ListView listViewSuper;//list
     private TimersArrayAdapter theAdaper;//list
@@ -55,6 +62,8 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context = this;//colorPicker
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -247,6 +256,18 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            toolbar_top = (Toolbar) findViewById(R.id.toolbar);//colorPicker
+            floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+            dialog = new ColorPickerDialog(context, Color.rgb(255, 0, 0),
+                    getResources().getString(R.string.app_name),
+                    new ColorPickerDialog.OnColorChangedListener() {
+
+                        public void colorChanged(int color) {
+                            toolbar_top.setBackgroundColor(color);
+                           // floatingActionButton.setBackground;
+                        }
+                    });
+            dialog.show();
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -262,4 +283,17 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private ColorStateList getColorStateListTest(int colorRes) {
+        int[][] states = new int[][]{
+                new int[]{android.R.attr.state_enabled}, // enabled
+                new int[]{-android.R.attr.state_enabled}, // disabled
+                new int[]{-android.R.attr.state_checked}, // unchecked
+                new int[]{android.R.attr.state_pressed}  // pressed
+        };
+        int color = ContextCompat.getColor(context, colorRes);
+        int[] colors = new int[]{color, color, color, color};
+        return new ColorStateList(states, colors);
+    }
+
 }
