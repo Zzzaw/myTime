@@ -37,7 +37,7 @@ public class TimerEditActivity extends AppCompatActivity {
         editPosition=getIntent().getIntExtra("edit_position",0);//要编辑的item的位置
         timer = (Timer) getIntent().getSerializableExtra("timer");
         if(timer == null){
-            timer = new Timer("new",R.drawable.timer_1);
+            timer = new Timer("new",R.drawable.i1);
         }
 
         buttonReturn=(Button)findViewById(R.id.button_return);

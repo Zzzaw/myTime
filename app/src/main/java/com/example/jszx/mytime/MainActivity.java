@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -54,9 +56,9 @@ public class MainActivity extends AppCompatActivity
     public List<Timer> getListTimers() {
         List<Timer> Books;
         Books=new ArrayList<Timer>();
-        Books.add(new Timer("信息安全数学基础（第2版）",R.drawable.timer_1));
-        Books.add(new Timer("创新工程实践",R.drawable.timer_2));
-        Books.add(new Timer("软件项目管理案例教程（第4版）",R.drawable.timer_3));
+        Books.add(new Timer("生日",R.drawable.i1));
+        Books.add(new Timer("考试",R.drawable.i2));
+        Books.add(new Timer("放假",R.drawable.i3));
         return Books;
     }
 
@@ -264,7 +266,9 @@ public class MainActivity extends AppCompatActivity
 
                         public void colorChanged(int color) {
                             toolbar_top.setBackgroundColor(color);
-                           // floatingActionButton.setBackground;
+                            floatingActionButton.setBackgroundColor(color);
+                            ColorFilter filter = new LightingColorFilter( color, color);
+                            floatingActionButton.setColorFilter(filter);
                         }
                     });
             dialog.show();

@@ -2,6 +2,7 @@ package com.example.jszx.mytime;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +45,7 @@ public class TimerDetailActivity extends AppCompatActivity {
     private static final int msgKey1 = 1;//countdown
     private TextView tv_time;//countdown
     private TextView date;//get date
+    private LinearLayout mainLayout;//用于设置背景图片
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +61,11 @@ public class TimerDetailActivity extends AppCompatActivity {
         timerName = (TextView)findViewById(R.id.name);
         tv_time = (TextView) findViewById(R.id.mytime);//countdown
         date = (TextView)findViewById(R.id.date);//get date
+        mainLayout = (LinearLayout)findViewById(R.id.layout_timer_detail);
 
         timerName.setText(timer.getTitle());
         date.setText(getTimes(timer.getDate()));//date
+        mainLayout.setBackgroundResource(timer.getCoverResourceId());
 
         new TimeThread().start();//countdown
 
@@ -193,8 +199,8 @@ public class TimerDetailActivity extends AppCompatActivity {
             long hour = diff % nd / nh;// 计算差多少小时
             long min = diff % nd % nh / nm;// 计算差多少分钟
             long sec = diff % nd % nh % nm / ns;// 计算差多少秒
-            return "时间相差：" + day + "天" + hour + "小时" + min
-                    + "分钟" + sec + "秒。";
+            return day + "天" + hour + "小时" + min
+                    + "分钟" + sec + "秒";
         } catch (ParseException e) {
             e.printStackTrace();
         }

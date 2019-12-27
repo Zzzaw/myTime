@@ -21,29 +21,14 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/text_view_timer_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="Description" />
 
-
-    <EditText
-        android:id="@+id/edit_text_timer_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="26dp" />
 
     <TextView
         android:id="@+id/text_view_timer_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:text="日期" />
 
 
@@ -53,59 +38,34 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="26dp"
+        android:layout_marginTop="10dp"
         android:hint="请选择"
         android:textSize="14dp" />
 
-    <TextView
-        android:id="@+id/text_view_timer_cycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="重复设置" />
 
 
-    <EditText
-        android:id="@+id/edit_text_timer_cycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="26dp" />
 
-    <TextView
-        android:id="@+id/text_view_timer_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="图片" />
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:layout_width="fill_parent">
 
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:text="确定" />
 
-    <EditText
-        android:id="@+id/edit_text_timer_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="26dp" />
-
-    <Button
-        android:id="@+id/button_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="0dp"
-        android:text="确定" />
-
-    <Button
-        android:id="@+id/button_return"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="0dp"
-        android:text="返回"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_good_price" />
+        <Button
+            android:id="@+id/button_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="50dp"
+            android:text="返回" />
+    </RelativeLayout>
 
 
 </LinearLayout>

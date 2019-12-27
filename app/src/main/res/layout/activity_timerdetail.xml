@@ -2,124 +2,76 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/layout_timer_detail">
 
-    <TextView
-        android:id="@+id/text_view_timer_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="16dp"
-        android:text="Title" />
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:layout_width="fill_parent">
+
+        <Button
+            android:id="@+id/button_return"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="30dp"
+            android:background="@android:drawable/ic_menu_revert" />
+
+        <Button
+            android:id="@+id/button_delete"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="80dp"
+            android:background="@android:drawable/ic_menu_delete"></Button>
+
+        <Button
+            android:id="@+id/button_edit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="30dp"
+            android:background="@android:drawable/ic_menu_edit" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp" />
-
-    <TextView
-        android:id="@+id/text_view_timer_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="Description" />
-
-
-    <EditText
-        android:id="@+id/edit_text_timer_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="26dp" />
-
-    <TextView
-        android:id="@+id/text_view_timer_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="日期" />
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="title"/>
 
     <TextView
         android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="26dp"
-        android:hint="请选择"
-        android:textSize="14dp" />
+        android:hint="time"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:textColor="@color/white"/>
+
+
 
 
     <TextView
-        android:id="@+id/text_view_timer_cycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="重复设置" />
-
-
-    <EditText
-        android:id="@+id/edit_text_timer_cycle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="26dp" />
-
-    <TextView
-        android:id="@+id/text_view_timer_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="0dp"
-        android:text="图片" />
-
-
-    <EditText
-        android:id="@+id/edit_text_timer_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginLeft="26dp" />
-
-    <TextView
-        android:textSize="40sp"
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:textSize="30sp"
+        android:text="counting"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/mytime"
-        android:layout_weight="1" />
+        android:textColor="@color/white"
+        android:gravity="center" />
 
 
-    <Button
-        android:id="@+id/button_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="0dp"
-        android:text="Edit" />
-
-    <Button
-        android:id="@+id/button_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="0dp"
-        android:text="Delete" />
-
-    <Button
-        android:id="@+id/button_return"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="0dp"
-        android:text="返回"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_good_price" />
 
 </LinearLayout>
