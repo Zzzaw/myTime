@@ -187,7 +187,8 @@ public class MainActivity extends AppCompatActivity
                             position=data.getIntExtra("edit_position",0);
                             Timer timer=theTimers.get(position);
 
-                            timer.setTitle(new_timer.getTitle());
+                            timer.setTitle(new_timer.getTitle());//名字
+                            timer.setDate(new_timer.getDate());//时间
 
                             theAdaper.notifyDataSetChanged();
                             Toast.makeText(this, "修改成功", Toast.LENGTH_SHORT).show();
